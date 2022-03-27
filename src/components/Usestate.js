@@ -10,9 +10,9 @@ export default function Usestate() {
 
     useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/pokemon')
-        // .then(res => console.log(res))
         .then(res => setData(prevData => res.data.results))
         .then(setData(prevData => (prevData[0] = 'hi')))
+        .then(console.log(data))
     }, [])
 
     console.log(data)
